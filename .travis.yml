@@ -22,5 +22,5 @@ jobs:
       deploy:
         provider: heroku
         api_key: $HEROKU_API
-        app: pretalab-ci-cd-marylly
+        app: pretalab-devops
         on: master
