@@ -7,3 +7,20 @@ jobs:
     - stage: build
       name: Build da aplicação JavaScript
       script: npm install
+    
+    - stage: linter
+      name: Valida a sintaxe e estilo
+      script: npm run linter
+
+    - stage: unit tests
+      name: Testes unitários
+      script: npm test
+      
+     - stage: deploy
+      name: Conecta no Heroku e faz o deploy
+      script: skip
+      deploy:
+        provider: heroku
+        api_key: $HEROKU_API
+        app: pretalab-ci-cd-marylly
+        on: master
